@@ -1,1 +1,6 @@
 build*
+.kdev4/
+.vscode/
+_build/
+*.kdev4
+
