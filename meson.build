@@ -20,8 +20,8 @@ pkg.generate(
     libraries : libfactplusplus,
     subdirs : 'factplusplus',
     version : '0.0.1',
-    name : 'libfactplusplus',
-    filebase : 'libfactplusplus',
+    name : 'factplusplus',
+    filebase : 'factplusplus',
     description : 'An efficient Description Logic reasoner compatible with OWL DL and OWL 2.'
 )
 

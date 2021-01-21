@@ -37,13 +37,16 @@ protected:	// typedefs
 		/// vector of entries for synonyms
 	typedef std::vector<const ClassifiableEntry*> EqualNames;
 
-public:		// typedefs
+public:
+    // typedefs
 	// accessors type
 
-		/// RW iterator for the neighbours
+    /// RW iterator for the neighbours
 	typedef TaxVertexLink::iterator iterator;
-		/// RO iterator for the neighbours
+    /// RO iterator for the neighbours
 	typedef TaxVertexLink::const_iterator const_iterator;
+    /// RO iterator for the synonyms.
+    typedef EqualNames::const_iterator syn_iterator;
 
 private:	// members
 		/// immediate parents and children
@@ -177,6 +180,9 @@ public:
 
 	const_iterator begin ( bool upDirection ) const { return neigh(upDirection).begin(); }
 	const_iterator end ( bool upDirection ) const { return neigh(upDirection).end(); }
+	
+	syn_iterator begin_syn() const {return Synonyms.begin();}
+	syn_iterator end_syn() const {return Synonyms.end();}
 
 	/** Adds vertex to existing graph. For every Up, Down such that (Up->Down)
 		creates couple of links (Up->this), (this->Down). Don't work with synonyms!!!
